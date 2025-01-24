@@ -1,7 +1,7 @@
 import { IconType } from 'react-icons';
 import { FaUserPlus, FaUsers } from 'react-icons/fa';
 import { HiPencilAlt } from 'react-icons/hi';
-import { LuUser2, LuUsers2 } from 'react-icons/lu';
+import { LuUser } from 'react-icons/lu';
 import { MdInfo } from 'react-icons/md';
 
 export interface IAsideLinksOne {
@@ -14,17 +14,17 @@ export const AsideLinksOne: IAsideLinksOne[] = [
   {
     label: 'Profile',
     path: '/profile',
-    icon: LuUser2,
+    icon: LuUser,
   },
   {
     label: 'Following',
     path: '/profile/following',
-    icon: LuUsers2,
+    icon: LuUser,
   },
   {
     label: 'Followers',
     path: '/profile/followers',
-    icon: LuUsers2,
+    icon: LuUser,
   },
 ];
 

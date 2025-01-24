@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { FaUser } from 'react-icons/fa';
 import { MdLogout } from 'react-icons/md';
-import { LuUser2 } from 'react-icons/lu';
+import { LuUser } from 'react-icons/lu';
 import { FiSettings } from 'react-icons/fi';
 
 import { logout } from '@/actions/auth/logout';
@@ -70,7 +70,7 @@ export function UserMenu({ user }: Props) {
 
             <Link href="/profile" prefetch>
               <MenubarItem>
-                <LuUser2 size={19} />
+                <LuUser size={19} />
                 Profile
               </MenubarItem>
             </Link>

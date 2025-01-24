@@ -23,21 +23,21 @@ export async function FollowersUsersCard({
   loggedInUser,
   isAuth,
 }: Props) {
-  let isUserFollowed = await checkFollowRelationship(follower?._id);
+  let isUserFollowed = await checkFollowRelationship(follower?._id as string);
 
   async function handleFollow() {
     'use server';
     await followUser({
-      followerId: loggedInUser?._id,
-      followeeId: follower?._id,
+      followerId: loggedInUser?._id as string,
+      followeeId: follower?._id as string,
     });
   }
 
   async function handleUnFollow() {
     'use server';
     await unfollowUser({
-      followerId: loggedInUser?._id,
-      followeeId: follower?._id,
+      followerId: loggedInUser?._id as string,
+      followeeId: follower?._id as string,
     });
   }
 

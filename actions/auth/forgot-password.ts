@@ -24,7 +24,12 @@ export async function forgotPassword({
 
   // 3) Send it to user's email
   try {
-    const resetURL = `${process.env.CLIENT_DOMAIN}/auth/reset-password/${resetToken}`;
+    const isProduction = process.env.NODE_ENV === 'production';
+    const clientDomain = isProduction
+      ? process.env.CLIENT_DOMAIN_PROD
+      : process.env.CLIENT_DOMAIN_DEV;
+
+    const resetURL = `${clientDomain}/auth/reset-password/${resetToken}`;
 
     await sendPasswordResetEmail({
       email: user?.email,

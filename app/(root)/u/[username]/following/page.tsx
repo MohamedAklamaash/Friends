@@ -12,7 +12,7 @@ interface Props {
 export default async function FollowingPage({ params }: Props) {
   const { user } = await getUserByUsername(params.username);
   const { user: loggedInUser } = await currentUser();
-  const following = await getUserFollowing(user?._id);
+  const following = await getUserFollowing(user?._id as string);
 
   return (
     <main>

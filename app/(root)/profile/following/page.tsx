@@ -6,7 +6,7 @@ import { FollowersUsersCard } from '@/components/cards/followers-card';
 
 export default async function FollowingPage() {
   const { user: loggedInUser } = await currentUser();
-  const following = await getUserFollowing(loggedInUser?._id);
+  const following = await getUserFollowing(loggedInUser?._id as string);
 
   return (
     <main>

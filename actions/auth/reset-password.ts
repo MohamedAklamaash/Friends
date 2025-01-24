@@ -38,7 +38,7 @@ export async function resetPassword({ token, newPassword }: Props) {
   await user.save();
 
   // 4) Log the user in, send JWT
-  const newToken = signToken(user._id);
+  const newToken = signToken(user._id as string);
 
   let cookieOptions: ResponseCookie = {
     name: 'jwt',

@@ -1,7 +1,7 @@
 'use client';
 
 import { useFormStatus } from 'react-dom';
-import { LuUserMinus2, LuUserPlus2 } from 'react-icons/lu';
+import { LuUserMinus, LuUserPlus } from 'react-icons/lu';
 
 import { Button, buttonVariants } from '@/components/ui/button';
 
@@ -30,9 +30,9 @@ export function FollowButtons({
       aria-disabled={pending || isDisabled}
     >
       {!pending && isFollowed ? (
-        <LuUserMinus2 size={iconSize} />
+        <LuUserMinus size={iconSize} />
       ) : (
-        <LuUserPlus2 size={iconSize} />
+        <LuUserPlus size={iconSize} />
       )}
       <span className="text-sm">
         {!pending && isFollowed ? 'Following' : 'Follow'}

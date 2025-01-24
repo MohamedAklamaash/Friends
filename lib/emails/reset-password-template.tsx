@@ -19,6 +19,11 @@ interface Props {
 }
 
 export function RPEmailHTML({ name, resetURL }: Props): JSX.Element {
+  const isProduction = process.env.NODE_ENV === 'production';
+  const clientDomain = isProduction
+    ? process.env.CLIENT_DOMAIN_PROD 
+    : process.env.CLIENT_DOMAIN_DEV;
+
   return (
     <Html>
       <Head />
@@ -79,7 +84,7 @@ export function RPEmailHTML({ name, resetURL }: Props): JSX.Element {
               <Hr />
 
               <Container>
-                <Link href={process.env.CLIENT_DOMAIN} className="w-fit block mx-auto">
+                <Link href={clientDomain} className="w-fit block mx-auto">
                   <Text className="mt-3 mb-6 text-gray-500 font-sans text-sm leading-6 text-center">
                     Friends Inc.
                   </Text>

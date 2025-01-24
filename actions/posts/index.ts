@@ -47,7 +47,7 @@ export async function editPost(
 
   const { user } = await currentUser();
 
-  if (existingPost.author.toString() !== user?._id.toString()) {
+  if (existingPost.author.toString() !== user?._id as string) {
     return { error: 'You are not authorized to edit this post' };
   }
 

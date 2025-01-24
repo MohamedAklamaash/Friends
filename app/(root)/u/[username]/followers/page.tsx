@@ -13,7 +13,7 @@ interface Props {
 export default async function FollowersPage({ params }: Props) {
   const { user } = await getUserByUsername(params.username);
   const { user: loggedInUser, isAuthenticated } = await CheckIsAuth();
-  const followers = await getUserFollowers(user?._id);
+  const followers = await getUserFollowers(user?._id as string);
 
   return (
     <main>
