@@ -7,8 +7,8 @@ import { FollowModel, IFollows } from '@/models/followsModel';
 import { currentUser } from '../auth/current-user';
 
 interface FollowsProps {
-  followerId: string;
-  followeeId: string;
+  followerId: any;
+  followeeId: any;
 }
 
 export async function followUser({ followeeId, followerId }: FollowsProps) {
@@ -74,7 +74,7 @@ export async function getUserFollowing(userId: string) {
 // #################################################################
 
 export async function checkFollowRelationship(
-  userIdX: string
+  userIdX: any
 ): Promise<boolean> {
   const { user: loggedInUser } = await currentUser();
 

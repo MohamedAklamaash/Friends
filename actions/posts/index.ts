@@ -32,7 +32,7 @@ export async function createPost(data: z.infer<typeof PostSchema>) {
 }
 
 export async function editPost(
-  postId: string,
+  postId: any,
   newData: z.infer<typeof PostSchema>
 ) {
   connectToDb();
@@ -132,7 +132,7 @@ export async function deletePost(id: any) {
 // #################################################################
 
 interface PostInteracsProps {
-  postId: Types.ObjectId;
+  postId: Types.ObjectId | any;
   userId: Types.ObjectId | any;
 }
 
@@ -183,7 +183,7 @@ export async function checkIfUserLikedPost({
   return userLikedPost || false;
 }
 
-export async function getLikesCount(postId: string) {
+export async function getLikesCount(postId: any) {
   const post: IPost | null = await PostModel.findById(postId);
 
   if (!post) {
@@ -194,7 +194,7 @@ export async function getLikesCount(postId: string) {
   return likesCount;
 }
 
-export async function getLikedUsers(postId: string) {
+export async function getLikedUsers(postId: any) {
   const post = (await PostModel.findById(postId).populate(
     'likes'
   )) as IPost | null;
