@@ -23,8 +23,6 @@ import { InputField } from '../components/input-field';
 import { ForgotPasswordBtn } from '../components/buttons';
 import { redirect } from 'next/navigation';
 
-// GOOD
-
 export function SignUpForm() {
   const [status, setStatus] = useState<{
     error?: string | undefined;
@@ -49,6 +47,8 @@ export function SignUpForm() {
       await signup(data).then((data) => {
         if (data?.error) {
           setStatus({ error: data.error });
+        } else {
+          setStatus({ success: 'Signup successful!' });
         }
       });
     });
@@ -114,12 +114,40 @@ export function SignUpForm() {
         <FormError message={status.error} />
         <FormSuccess message={status.success} />
 
-        <Button disabled={isPending} type="submit" variant="auth">
-          Sign Up
+        <Button
+          disabled={isPending}
+          type="submit"
+          variant="auth"
+        >
+          {isPending ? (
+            <span className="flex items-center gap-2">
+              <svg
+                className="animate-spin h-4 w-4 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v4a4 4 0 100 8v4a8 8 0 01-8-8z"
+                ></path>
+              </svg>
+              Signing Up...
+            </span>
+          ) : (
+            'Sign Up'
+          )}
         </Button>
       </form>
-
-      {/* <Social /> */}
     </Form>
   );
 }
