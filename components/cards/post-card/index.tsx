@@ -11,19 +11,13 @@ import { PostImage } from "./post-image"
 import { LikeButton } from "./like-button"
 import { LikeStatus } from "./like-status"
 import type { ObjectId } from "mongoose"
+import { NotloggedIn } from "./Notloggedin"
 
 export async function PostCard({ post }: { post: IPost }) {
   const { isAuthenticated, user: loggedInUser } = await CheckIsAuth()
 
   if (!loggedInUser) {
-    console.error("User is not logged in")
-    return (
-      <div className="my-4 mx-2 rounded-lg bg-gradient-to-r from-red-100 to-red-200 p-4 shadow-md transition duration-300 hover:shadow-lg">
-        <div className="flex-center w-full gap-2 text-red-600">
-          <a href="/auth/login" className="text-sm font-bold">Log in to like posts</a>
-        </div>
-      </div>
-    )
+    return ;
   }
 
   // Type assertions for ObjectId or compatible types
