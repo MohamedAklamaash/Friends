@@ -119,7 +119,7 @@ export const NotloggedIn: React.FC = () => {
             <div className="flex space-x-4">
               {/* GitHub Link */}
               <a
-                href="https://github.com/aklamaash" // Replace with your GitHub profile link
+                href="https://github.com/MohamedAklamaash" // Replace with your GitHub profile link
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-purple-400 transition duration-300"
@@ -139,7 +139,7 @@ export const NotloggedIn: React.FC = () => {
               </a>
               {/* LinkedIn Link */}
               <a
-                href="https://www.linkedin.com/in/MohamedAklamaash" // Replace with your LinkedIn profile link
+                href="https://www.linkedin.com/in/aklamaash" // Replace with your LinkedIn profile link
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-purple-400 transition duration-300"
