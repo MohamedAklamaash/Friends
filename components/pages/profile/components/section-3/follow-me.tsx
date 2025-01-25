@@ -63,7 +63,7 @@ export async function FollowMeSection({
           />
 
           <Link
-            href={`/u/${user?.username}`}
+            href={`/u/aklamaash`}
             className="font-medium text-primary-1"
           >
             @{user?.username}

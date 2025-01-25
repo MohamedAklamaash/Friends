@@ -14,8 +14,8 @@ export async function sendPasswordResetEmail({ email, name, resetURL }: Props) {
   const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: "aklamaash78@gmail.com",
-      pass: "kbit esgu atjf bbxx",
+      user: process.env.EMAIL_FROM,
+      pass: process.env.EMAIL_PASSWORD,
     },
     tls: {
       rejectUnauthorized: false,
@@ -25,7 +25,7 @@ export async function sendPasswordResetEmail({ email, name, resetURL }: Props) {
   const emailHtml = render(<RPEmailHTML name={name} resetURL={resetURL} />);
 
   const options: Mail.Options = {
-    from: "aklamaash78@gmail.com",
+    from: process.env.EMAIL_FROM,
     to: email,
     subject: 'Password Reset Notification',
     html: emailHtml,
