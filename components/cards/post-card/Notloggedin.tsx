@@ -33,15 +33,15 @@ const features = [
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
+    name: "Laxman",
     role: "Influencer",
     content:
-      "This app has revolutionized the way I connect with my audience. It's intuitive, fun, and keeps me engaged all day!",
+      "This app has revolutionized the way I connect with my audience. It is intuitive, fun, and keeps me engaged all day!",
     avatar: laxmanpic,
   },
   {
-    name: "Mike Chen",
-    role: "Photographer",
+    name: "Paramaguru",
+    role: "AI Guy",
     content:
       "As a visual artist, I love how this platform showcases my work. The community here is supportive and inspiring.",
     avatar: paramapic,
@@ -84,24 +84,6 @@ export const NotloggedIn: React.FC = () => {
           </div>
         </section>
 
-        <section id="features" className="w-full bg-white py-20">
-          <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">Why Choose SocialApp?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1"
-                >
-                  <div className="text-4xl mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section id="testimonials" className="w-full py-20">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">What Our Users Say</h2>
@@ -121,12 +103,13 @@ export const NotloggedIn: React.FC = () => {
                       <p className="text-gray-600">{testimonial.role}</p>
                     </div>
                   </div>
-                  <p className="text-gray-700 italic">"{testimonial.content}"</p>
+                  <p className="text-gray-700 italic">&quot;{testimonial.content}&quot;</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
+
       </main>
 
       <footer className="w-full bg-gray-800 text-white py-8">

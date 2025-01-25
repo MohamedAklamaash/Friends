@@ -9,7 +9,7 @@ export default function NotFound() {
         <div>
           <h1 className="text-9xl font-extrabold text-gray-900">404</h1>
           <h2 className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">Page not found</h2>
-          <p className="mt-4 text-base text-gray-500">Sorry, we couldn't find the page you're looking for.</p>
+          <p className="mt-4 text-base text-gray-500">Sorry, we couldn&apos;t find the page you&apos;re looking for.</p>
         </div>
         <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
           <Button asChild variant="default">
