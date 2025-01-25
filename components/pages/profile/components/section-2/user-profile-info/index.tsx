@@ -48,20 +48,6 @@ export async function UserProfileInfo({ user, isExternalUser = false }: Props) {
             </h1>
           )}
 
-          {user?.username === 'hassan' && (
-            <div className="flex items-center gap-x-2">
-              <Button size="sm" className="w-full" variant="outline" asChild>
-                <Link href="https://github.com/yuzakki" target="_blank">
-                  <FaGithub className="h-5 w-5" />
-                </Link>
-              </Button>
-              <Button size="sm" className="w-full" variant="outline">
-                <Link href="https://hassanwebdev.vercel.app" target="_blank">
-                  <TbDeviceDesktopShare className="h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
-          )}
         </div>
 
         <span className="text-xl font-normal text-gray-500 laptop:text-start text-center">

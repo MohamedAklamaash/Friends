@@ -18,7 +18,7 @@ export async function FollowMeSection({
 }: {
   classes?: string | boolean;
 }) {
-  const { user } = await getUserByUsername('hassan');
+  const { user } = await getUserByUsername('aklamaash');
 
   const { user: loggedInUser, isAuthenticated } = await CheckIsAuth();
   let isUserFollowed = await checkFollowRelationship(user?._id);

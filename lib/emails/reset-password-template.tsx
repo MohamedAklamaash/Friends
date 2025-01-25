@@ -76,9 +76,7 @@ export function RPEmailHTML({ name, resetURL }: Props): JSX.Element {
                 <Text className="text-base font-normal text-left leading-relaxed">
                   Thank you,
                 </Text>
-                <Text className="text-base font-normal mb-4 text-left leading-relaxed">
-                  - Hassan Azouzout, CEO
-                </Text>
+  
               </Container>
 
               <Hr />
