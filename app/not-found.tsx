@@ -1,32 +1,22 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Search, Home } from "lucide-react"
+import { Home } from "lucide-react"
+import { poppins } from "@/components/fonts"
+import { cn } from "@/lib/utils"
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8 text-center">
+    <div className="min-h-screen flex items-center justify-center app-bg px-4">
+      <div className="glass-card rounded-xl p-10 max-w-sm w-full text-center space-y-5">
+        <h1 className={cn("text-7xl font-semibold brand-gradient-text", poppins.className)}>404</h1>
         <div>
-          <h1 className="text-9xl font-extrabold text-gray-900">404</h1>
-          <h2 className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">Page not found</h2>
-          <p className="mt-4 text-base text-gray-500">Sorry, we couldn&apos;t find the page you&apos;re looking for.</p>
+          <h2 className="text-lg font-semibold text-[#1a1612]">Page not found</h2>
+          <p className="text-sm text-[#8a8278] mt-1">The page you&apos;re looking for doesn&apos;t exist.</p>
         </div>
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
-          <Button asChild variant="default">
-            <Link href="/">
-              <Home className="mr-2 h-4 w-4" />
-              Go back home
-            </Link>
-          </Button>
-          <Button asChild variant="outline">
-            <Link href="/">
-              <Search className="mr-2 h-4 w-4" />
-              Search site
-            </Link>
-          </Button>
-        </div>
+        <Link href="/" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#f07c1e] text-white text-sm font-medium hover:bg-[#d96a10] transition-colors">
+          <Home className="h-4 w-4" />
+          Go home
+        </Link>
       </div>
     </div>
   )
 }
-

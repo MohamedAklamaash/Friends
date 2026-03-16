@@ -43,8 +43,7 @@ export async function FollowMeSection({
     <form
       action={isUserFollowed ? handleUnFollow : handleFollow}
       className={cn(
-        !classes &&
-          'bg-white !w-[23%] px-4 py-4 shadow-md rounded-lg hidden laptop:block h-fit',
+        !classes && 'glass-card !w-[23%] px-4 py-4 rounded-2xl hidden laptop:block h-fit',
         classes
       )}
     >
@@ -64,7 +63,7 @@ export async function FollowMeSection({
 
           <Link
             href={`/u/aklamaash`}
-            className="font-medium text-primary-1"
+            className="font-medium text-[#f07c1e]"
           >
             @{user?.username}
           </Link>

@@ -6,10 +6,9 @@ import { SignUpForm } from '@/components/forms/auth/signup-form';
 
 export default function SignUpPage() {
   return (
-    <main className="flex flex-col items-center justify-center h-screen gap-8 px-4 auth-page">
-      <Logo textClasses="text-white font-bold" />
-
-      <FormLayout title="Sign Up">
+    <main className="flex flex-col items-center justify-center min-h-screen gap-7 px-4 auth-page">
+      <Logo textClasses="text-white" />
+      <FormLayout title="Create account">
         <SignUpForm />
         <AlreadyHaveAcc />
       </FormLayout>

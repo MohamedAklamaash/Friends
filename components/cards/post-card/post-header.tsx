@@ -45,7 +45,7 @@ export function PostHeader({ post, currentUser, classes }: Props) {
             id: creatingPostToast,
           })
         )
-        .catch(() => toast.error('Failed to create post'));
+        .catch(() => toast.error('Failed to delete post'));
     } else {
       toast.error('You can only delete your own posts.');
     }

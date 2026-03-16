@@ -33,8 +33,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               );
             }}
           >
-            {textType === 'password' && <EyeOff size={20} color="#475569" />}
-            {textType === 'text' && <Eye size={20} color="#475569" />}
+            {textType === 'password' && <EyeOff size={18} className="text-white/40" />}
+            {textType === 'text' && <Eye size={18} className="text-white/40" />}
           </button>
         )}
       </div>

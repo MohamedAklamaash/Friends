@@ -32,7 +32,7 @@ export async function login({ email, password }: z.infer<typeof LoginSchema>) {
   }
 
   // 4) Send token to client
-  const token = signToken(user._id as string);
+  const token = signToken(user._id as unknown as string);
 
   let cookieOptions: ResponseCookie = {
     name: 'jwt',

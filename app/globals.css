@@ -4,126 +4,120 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 224 71.4% 4.1%;
+    /* Warm charcoal editorial palette */
+    --background: 30 8% 97%;
+    --foreground: 20 10% 12%;
     --card: 0 0% 100%;
-    --card-foreground: 224 71.4% 4.1%;
+    --card-foreground: 20 10% 12%;
     --popover: 0 0% 100%;
-    --popover-foreground: 224 71.4% 4.1%;
-    --primary: 262.1 83.3% 57.8%;
-    --primary-foreground: 210 20% 98%;
-    --secondary: 220 14.3% 95.9%;
-    --secondary-foreground: 220.9 39.3% 11%;
-    --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
-    --accent: 220 14.3% 95.9%;
-    --accent-foreground: 220.9 39.3% 11%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 262.1 83.3% 57.8%;
+    --popover-foreground: 20 10% 12%;
+    --primary: 28 90% 52%;        /* warm amber */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 15% 93%;
+    --secondary-foreground: 20 10% 20%;
+    --muted: 30 10% 92%;
+    --muted-foreground: 20 8% 48%;
+    --accent: 16 80% 56%;         /* coral accent */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 12% 88%;
+    --input: 30 12% 88%;
+    --ring: 28 90% 52%;
     --radius: 0.5rem;
-  }
 
-  .dark {
-    --background: 224 71.4% 4.1%;
-    --foreground: 210 20% 98%;
-    --card: 224 71.4% 4.1%;
-    --card-foreground: 210 20% 98%;
-    --popover: 224 71.4% 4.1%;
-    --popover-foreground: 210 20% 98%;
-    --primary: 263.4 70% 50.4%;
-    --primary-foreground: 210 20% 98%;
-    --secondary: 215 27.9% 16.9%;
-    --secondary-foreground: 210 20% 98%;
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 217.9 10.6% 64.9%;
-    --accent: 215 27.9% 16.9%;
-    --accent-foreground: 210 20% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
-    --ring: 263.4 70% 50.4%;
+    /* Brand */
+    --amber: #f07c1e;
+    --coral: #e8522a;
+    --charcoal: #1e1a16;
+    --warm-white: #faf8f5;
+    --warm-gray: #8a8278;
+
+    /* Cards */
+    --card-bg: rgba(255, 253, 250, 0.92);
+    --card-border: rgba(240, 124, 30, 0.12);
+    --card-shadow: 0 2px 16px rgba(30, 26, 22, 0.08);
+
+    /* Nav */
+    --nav-bg: rgba(250, 248, 245, 0.95);
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+  * { @apply border-border; }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body, 'DM Sans', sans-serif);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display, 'Playfair Display', serif);
   }
 }
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-.animation-delay-300 {
-  animation-delay: 300ms;
-}
-
-.animation-delay-600 {
-  animation-delay: 600ms;
-}
-
 
 @layer components {
-  .flex-between {
-    @apply flex justify-between items-center;
+  .flex-between { @apply flex justify-between items-center; }
+  .flex-center  { @apply flex justify-center items-center; }
+  .main-container { @apply px-4 md:px-8 2xl:px-[6rem]; }
+
+  /* Card system */
+  .glass-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
   }
-  .flex-center {
-    @apply flex justify-center items-center;
+
+  /* Navbar */
+  .glass-nav {
+    background: var(--nav-bg);
+    border-bottom: 1px solid rgba(240, 124, 30, 0.1);
+    box-shadow: 0 1px 0 rgba(30, 26, 22, 0.06);
   }
-  .main-container {
-    @apply px-4 md:px-8 2xl:px-[6rem];
+
+  /* App background — warm linen texture feel */
+  .app-bg {
+    background-color: #f5f2ee;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 20% 0%, rgba(240,124,30,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(232,82,42,0.05) 0%, transparent 60%);
+    min-height: 100vh;
+  }
+
+  /* Auth background — deep charcoal with warm glow */
+  .auth-page {
+    background-color: #1a1612;
+    background-image:
+      radial-gradient(ellipse 70% 60% at 50% -10%, rgba(240,124,30,0.25) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 90% 90%, rgba(232,82,42,0.15) 0%, transparent 50%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Amber accent line */
+  .accent-line {
+    height: 2px;
+    background: linear-gradient(90deg, var(--amber), var(--coral));
+    border-radius: 1px;
+  }
+
+  /* Brand gradient text */
+  .brand-gradient-text {
+    background: linear-gradient(135deg, var(--amber) 0%, var(--coral) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
-/* Custom styles */
+.logo h1 { word-spacing: -2px; letter-spacing: -0.02em; }
 
-.logo h1 {
-  word-spacing: -3px;
-}
+div[role='menubar'] { border: none; }
+.rdp-vhidden { @apply hidden; }
 
-div[role='menubar'] {
-  border: none;
-}
-
-.rdp-vhidden {
-  @apply hidden;
-}
-
-.auth-page {
-  background-color: #4158d0;
-  background-image: linear-gradient(
-    43deg,
-    #4158d0 0%,
-    #c850c0 46%,
-    #ffcc70 100%
-  );
-}
-
-[class*='classic']:before {
-  content: 'Loading...';
-}
+/* Loading */
+[class*='classic']:before { content: 'Loading...'; }
 .classic {
   font-weight: 700;
   font-family: monospace;
@@ -132,8 +126,19 @@ div[role='menubar'] {
   animation: c4 1s steps(4) infinite;
   margin-top: 10px;
 }
-@keyframes c4 {
-  to {
-    clip-path: inset(0 -1ch 0 0);
-  }
+@keyframes c4 { to { clip-path: inset(0 -1ch 0 0); } }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(240,124,30,0.25); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(240,124,30,0.5); }
+
+/* Post card hover */
+.post-card-hover {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.post-card-hover:hover {
+  box-shadow: 0 8px 32px rgba(30, 26, 22, 0.12);
+  transform: translateY(-1px);
 }

@@ -15,24 +15,23 @@ export default async function HomePage() {
   }
 
   return (
-    <main className="pt-5 flex justify-between gap-4 items-start bg-light-1 main-container flex-1">
+    <main className="pt-6 flex justify-between gap-5 items-start main-container flex-1 pb-10">
       <div className="w-1/4 hidden laptop:block space-y-4">
-        <div className="w-full shadow-md bg-white rounded-lg">
+        <div className="w-full glass-card rounded-2xl overflow-hidden">
           <AsideOne />
         </div>
-        <FollowMeSection classes="bg-white !w-full px-4 py-4 shadow-md rounded-lg h-fit" />
+        <FollowMeSection classes="glass-card !w-full px-4 py-4 rounded-2xl h-fit" />
       </div>
 
       <div className="w-full laptop:w-1/2">
         <MainSide />
       </div>
 
-      <div className="w-1/4 shadow-md hidden laptop:block rounded-lg overflow-hidden">
-        <div className="py-2 bg-white">
+      <div className="w-1/4 hidden laptop:block rounded-2xl overflow-hidden">
+        <div className="glass-card rounded-2xl py-2">
           <AsideTwo />
         </div>
       </div>
     </main>
   )
 }
-

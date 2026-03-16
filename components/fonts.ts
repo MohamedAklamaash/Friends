@@ -1,13 +1,21 @@
-import { Open_Sans, Poppins, Roboto } from 'next/font/google';
+import { DM_Sans, Playfair_Display } from 'next/font/google';
 
-export const roboto = Roboto({
+// Body font — geometric, clean, modern
+export const roboto = DM_Sans({
   subsets: ['latin'],
-  weight: ['300', '400', '500'],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-body',
 });
 
-export const opensans = Open_Sans({ subsets: ['latin'] });
-
-export const poppins = Poppins({
+// Display font — editorial serif for headings & logo
+export const opensans = DM_Sans({
   subsets: ['latin'],
-  weight: ['400', '500', '700', '900'],
+  weight: ['400', '500', '600'],
+  variable: '--font-body',
+});
+
+export const poppins = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-display',
 });

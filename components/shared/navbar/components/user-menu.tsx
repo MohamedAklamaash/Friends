@@ -54,39 +54,37 @@ export function UserMenu({ user }: Props) {
             )}
           </MenubarTrigger>
 
-          <MenubarContent align="end">
-            <div className="px-2 py-1.5 text-sm font-normal">
-              <div className="flex flex-col space-y-1">
-                <p className="text-sm font-medium leading-none">
-                  {user?.fullName || user?.username}
-                </p>
-                <p className="text-xs leading-none text-muted-foreground">
-                  {user?.email}
-                </p>
-              </div>
+          <MenubarContent align="end" className="min-w-[200px]">
+            <div className="px-3 py-2 border-b border-border">
+              <p className="text-sm font-semibold text-[#1a1612] leading-none">
+                {user?.fullName || user?.username}
+              </p>
+              <p className="text-xs text-[#8a8278] mt-1">
+                {user?.email}
+              </p>
             </div>
 
             <MenubarSeparator />
 
             <Link href="/profile" prefetch>
-              <MenubarItem>
-                <LuUser size={19} />
-                Profile
+              <MenubarItem className="gap-2 cursor-pointer">
+                <LuUser size={15} className="text-[#f07c1e]" />
+                <span className="text-sm">Profile</span>
               </MenubarItem>
             </Link>
 
             <Link href="/profile/info" prefetch>
-              <MenubarItem>
-                <FiSettings size={19} />
-                Settings
+              <MenubarItem className="gap-2 cursor-pointer">
+                <FiSettings size={15} className="text-[#f07c1e]" />
+                <span className="text-sm">Settings</span>
               </MenubarItem>
             </Link>
 
             <MenubarSeparator />
 
-            <MenubarItem onClick={handleLogout}>
-              <MdLogout size={19} />
-              Log Out
+            <MenubarItem onClick={handleLogout} className="gap-2 cursor-pointer text-red-500 focus:text-red-500">
+              <MdLogout size={15} />
+              <span className="text-sm">Log out</span>
             </MenubarItem>
           </MenubarContent>
         </MenubarMenu>

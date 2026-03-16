@@ -21,7 +21,6 @@ import { FormSuccess } from '@/components/forms/form-success';
 
 import { InputField } from '../components/input-field';
 import { ForgotPasswordBtn } from '../components/buttons';
-import { redirect } from 'next/navigation';
 
 export function SignUpForm() {
   const [status, setStatus] = useState<{

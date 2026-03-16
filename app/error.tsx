@@ -4,48 +4,32 @@ import { useEffect } from "react"
 import Link from "next/link"
 import { AlertCircle, RefreshCw, Home } from "lucide-react"
 
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string }
-  reset: () => void
-}) {
-  useEffect(() => {
-    // Log the error to an error reporting service
-    console.error(error)
-  }, [error])
+export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
+  useEffect(() => { console.error(error) }, [error])
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md max-w-md w-full text-center">
-        <AlertCircle className="mx-auto h-12 w-12 text-red-500 mb-4" />
-        <h1 className="text-2xl font-bold text-gray-800 mb-2">Oops! Something went wrong</h1>
-        <p className="text-gray-600 mb-6">We apologize for the inconvenience. An error has occurred.</p>
-        <div className="flex flex-col space-y-3">
+    <div className="min-h-screen flex items-center justify-center app-bg px-4">
+      <div className="glass-card rounded-xl p-8 max-w-sm w-full text-center space-y-5">
+        <AlertCircle className="mx-auto h-10 w-10 text-[#e8522a]" />
+        <div>
+          <h1 className="text-xl font-semibold text-[#1a1612]">Something went wrong</h1>
+          <p className="text-sm text-[#8a8278] mt-1">An unexpected error occurred.</p>
+        </div>
+        <div className="flex flex-col gap-2">
           <button
             onClick={() => reset()}
-            className="flex items-center justify-center px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300"
+            className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#f07c1e] text-white text-sm font-medium hover:bg-[#d96a10] transition-colors"
           >
-            <RefreshCw className="mr-2 h-5 w-5" />
-            Try again
+            <RefreshCw className="h-4 w-4" /> Try again
           </button>
-          <Link
-            href="/"
-            className="flex items-center justify-center px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors duration-300"
-          >
-            <Home className="mr-2 h-5 w-5" />
-            Go back home
+          <Link href="/" className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-secondary text-secondary-foreground text-sm hover:bg-secondary/80 transition-colors">
+            <Home className="h-4 w-4" /> Go home
           </Link>
         </div>
         {process.env.NODE_ENV === "development" && (
-          <div className="mt-6 p-4 bg-gray-100 rounded-md text-left">
-            <h2 className="text-sm font-semibold text-gray-700 mb-2">Error details:</h2>
-            <p className="text-xs text-gray-600 break-all">{error.message}</p>
-          </div>
+          <p className="text-xs text-[#8a8278] break-all bg-muted rounded-lg p-3">{error.message}</p>
         )}
       </div>
     </div>
   )
 }
-

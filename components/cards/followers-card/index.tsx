@@ -23,26 +23,26 @@ export async function FollowersUsersCard({
   loggedInUser,
   isAuth,
 }: Props) {
-  let isUserFollowed = await checkFollowRelationship(follower?._id as string);
+  let isUserFollowed = await checkFollowRelationship(follower?._id as unknown as string);
 
   async function handleFollow() {
     'use server';
     await followUser({
-      followerId: loggedInUser?._id as string,
-      followeeId: follower?._id as string,
+      followerId: loggedInUser?._id as unknown as string,
+      followeeId: follower?._id as unknown as string,
     });
   }
 
   async function handleUnFollow() {
     'use server';
     await unfollowUser({
-      followerId: loggedInUser?._id as string,
-      followeeId: follower?._id as string,
+      followerId: loggedInUser?._id as unknown as string,
+      followeeId: follower?._id as unknown as string,
     });
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-md px-4 py-2.5 flex justify-between items-center w-full">
+    <div className="glass-card rounded-2xl px-4 py-3 flex justify-between items-center w-full">
       <div className="flex items-center gap-3">
         {follower?.photo ? (
           <Link href={`/u/${follower?.username}`}>
@@ -79,7 +79,7 @@ export async function FollowersUsersCard({
 
           <Link
             href={`/u/${follower?.username}`}
-            className="font-medium text-[15px] text-primary-1"
+            className="font-medium text-[15px] text-[#f07c1e]"
           >
             @{follower?.username}
           </Link>

@@ -12,9 +12,9 @@ export function CreatePost() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex items-center xm:gap-3 gap-2 border border-border shadow-md rounded-lg px-4 py-6 bg-white">
-      <div className="bg-slate-200 p-2.5 rounded-full">
-        <FaUser size={22} />
+    <div className="flex items-center xm:gap-3 gap-2 glass-card rounded-xl px-4 py-4">
+      <div className="bg-amber-50 border border-amber-100 p-2.5 rounded-full text-[#f07c1e]">
+        <FaUser size={18} />
       </div>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>

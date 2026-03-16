@@ -29,14 +29,14 @@ export function UserProfileLinksBar({ isExternalUser = false }: Props) {
           prefetch
           href={`/${isExternalProfile}${link.path}`}
           className={clsx(
-            'xs:px-4 px-3 py-2 hover:bg-slate-200 transition rounded-t-md duration-75 text-base hover:border-b-4 hover:border-primary1-hover',
+            'xs:px-4 px-3 py-2 hover:bg-amber-50 transition rounded-t-md duration-75 text-base hover:border-b-2 hover:border-[#f07c1e]',
             pathname === `/profile${link.path}` ||
               pathname === `/u/${isExternalUser}${link.path}` ||
               (link.path === '/' &&
                 (pathname === '/profile' ||
                   pathname === `/u/${isExternalUser}`))
-              ? 'border-b-4 border-primary-1'
-              : 'border-b-4 border-transparent'
+              ? 'border-b-2 border-[#f07c1e] font-semibold text-[#f07c1e]'
+              : 'border-b-2 border-transparent text-muted-foreground'
           )}
         >
           {isMobile ? (

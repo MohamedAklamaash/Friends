@@ -27,7 +27,7 @@ export async function AsideTwo() {
     <>
       <div className="flex-between px-4 pb-3 pt-2">
         <h1 className="font-medium text-base capitalize">Suggested people</h1>
-        <Link href="/suggested" className="text-primary-1 text-sm" prefetch>
+        <Link href="/suggested" className="text-[#f07c1e] text-sm" prefetch>
           see all
         </Link>
       </div>
@@ -101,7 +101,7 @@ export async function ShowUser({ user, i }: { user: IUser; i?: number }) {
 
           <Link
             href={`/u/${user?.username}`}
-            className="font-medium text-[15px] text-primary-1"
+            className="font-medium text-[15px] text-[#f07c1e]"
           >
             @{user?.username}
           </Link>
@@ -110,7 +110,7 @@ export async function ShowUser({ user, i }: { user: IUser; i?: number }) {
 
       {/* <Button
         size="sm"
-        className="rounded-full bg-primary-1/80 flex items-center gap-1"
+        className="rounded-full bg-[#f07c1e]/80 flex items-center gap-1"
       >
         <AiOutlineUserAdd size={17} />
         Follow

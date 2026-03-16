@@ -1,7 +1,5 @@
 import { getAllPosts } from '@/actions/posts';
-
 import { CreatePost } from '@/components/forms/create-post';
-import { cn } from '@/lib/utils';
 import { CheckIsAuth } from '@/data/check-is-auth';
 import { PostCard } from '@/components/cards/post-card';
 
@@ -15,17 +13,13 @@ export async function MainSide() {
 
       {(!posts || !posts.length) && (
         <div className="my-10 flex justify-center items-center">
-          <span className="text-slate-400 italic">
-            There is no posts to show
-          </span>
+          <span className="text-muted-foreground italic text-sm">No posts yet — be the first to share!</span>
         </div>
       )}
 
-      {posts && (
-        <section
-          className={cn('flex flex-col gap-4 ', isAuthenticated && 'mt-4')}
-        >
-          {posts?.map((post, i) => (
+      {posts && posts.length > 0 && (
+        <section className="flex flex-col gap-4 mt-4">
+          {posts.map((post, i) => (
             <PostCard post={post} key={i} />
           ))}
         </section>

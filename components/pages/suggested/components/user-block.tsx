@@ -34,7 +34,7 @@ export async function UserBlock({ user }: { user: IUser | null }) {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-sm px-4 py-2.5 flex justify-between items-center w-full">
+    <div className="glass-card rounded-2xl px-4 py-3 flex justify-between items-center w-full">
       <div className="flex items-center gap-3">
         {user?.photo ? (
           <Link href={`/u/${user?.username}`} className="!w-11">
@@ -68,7 +68,7 @@ export async function UserBlock({ user }: { user: IUser | null }) {
 
           <Link
             href={`/u/${user?.username}`}
-            className="font-medium text-primary-1 xs:text-[15px] text-xs"
+            className="font-medium text-[#f07c1e] xs:text-[15px] text-xs"
           >
             @{user?.username}
           </Link>

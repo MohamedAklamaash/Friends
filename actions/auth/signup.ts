@@ -43,7 +43,7 @@ export async function signup({
   });
 
   // 4) Send token to client
-  const token = signToken(newUser._id as string);
+  const token = signToken(newUser._id as unknown as string);
 
   let cookieOptions: ResponseCookie = {
     name: 'jwt',

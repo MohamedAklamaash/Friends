@@ -126,7 +126,7 @@ export function UserProfileHeader({ user, isExternalUser = false }: Props) {
           <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <DialogTrigger asChild>
               <div className="absolute right-0 bottom-4 z-10 rounded-full border-2 border-white text-white w-10 h-10 flex-center cursor-pointer overflow-hidden">
-                <div className="bg-primary-1 hover:bg-primary1-hover w-full h-full flex-center transition">
+                <div className="bg-[#f07c1e] hover:bg-[#d96a10] w-full h-full flex-center transition">
                   <div className="w-full h-full flex-center cursor-pointer">
                     <FaCamera size={16} />
                   </div>

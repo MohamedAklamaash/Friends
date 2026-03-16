@@ -23,7 +23,7 @@ async function ProfileLayout({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <main className="bg-light-1 main-container flex-1 min-h-screen">
+    <main className="app-bg main-container flex-1 min-h-screen">
       <section>
         <UserProfileHeader user={user} />
       </section>
@@ -38,7 +38,6 @@ async function ProfileLayout({ children }: { children: React.ReactNode }) {
         <div className={cn('grow sm:mb-20 mb-36', opensans.className)}>
           {children}
         </div>
-
         <FollowMeSection />
       </section>
     </main>

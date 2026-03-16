@@ -7,9 +7,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <section className={`${roboto.className} min-h-screen flex flex-col`}>
+    <section className={`${roboto.className} min-h-screen flex flex-col app-bg`}>
       <NavBar />
-
       <main className="flex-1 flex">{children}</main>
     </section>
   );

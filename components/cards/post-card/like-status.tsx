@@ -15,7 +15,7 @@ export function LikeStatus({
     <div className="mx-4">
       {isLikedByCurrentUser && likedCount === 1 && (
         <div className="flex gap-1 items-center w-fit hover:underline underline-offset-1 cursor-pointer">
-          <span className="w-5 h-5 rounded-full text-primary-1 flex-center">
+          <span className="w-5 h-5 rounded-full text-[#f07c1e] flex-center">
             <AiFillLike />
           </span>
 
@@ -25,7 +25,7 @@ export function LikeStatus({
 
       {isLikedByCurrentUser && likedCount > 1 && (
         <div className="flex gap-1 items-center w-fit hover:underline underline-offset-1 cursor-pointer">
-          <span className="w-5 h-5 rounded-full text-primary-1 flex-center">
+          <span className="w-5 h-5 rounded-full text-[#f07c1e] flex-center">
             <AiFillLike />
           </span>
 
@@ -37,7 +37,7 @@ export function LikeStatus({
 
       {!isLikedByCurrentUser && likedCount > 0 && (
         <div className="flex gap-1 items-center w-fit hover:underline underline-offset-1 cursor-pointer">
-          <span className="w-5 h-5 rounded-full text-primary-1 flex-center">
+          <span className="w-5 h-5 rounded-full text-[#f07c1e] flex-center">
             <AiFillLike />
           </span>
 

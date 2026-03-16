@@ -22,8 +22,7 @@ export function PostImage({ imageUrl, altText, classes, imgClasses }: Props) {
         alt={altText}
         height={500}
         width={500}
-        objectFit="cover"
-        className={cn('mx-auto', imgClasses)}
+        className={cn('mx-auto object-cover', imgClasses)}
       />
     </div>
   ) : null;

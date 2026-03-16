@@ -11,7 +11,7 @@ const JWT_EXPIRES_IN: string = process.env.JWT_EXPIRES_IN!;
 
 export const signToken = (id: string) => {
   return jwt.sign({ id }, JWT_SECRET, {
-    expiresIn: JWT_EXPIRES_IN,
+    expiresIn: JWT_EXPIRES_IN as any,
   });
 };
 

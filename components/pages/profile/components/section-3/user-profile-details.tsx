@@ -9,7 +9,7 @@ interface Props {
 
 export async function UserProfileDetails({ user }: Props) {
   return (
-    <div className="bg-white !w-[23%] px-4 py-4 shadow-md rounded-lg space-y-3.5 hidden laptop:block h-fit">
+    <div className="glass-card !w-[23%] px-4 py-4 rounded-2xl space-y-3.5 hidden laptop:block h-fit">
       <UserProfileDetailItem
         title="Bio"
         content={

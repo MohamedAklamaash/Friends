@@ -22,7 +22,7 @@ export function NotificationMenu() {
             className="sm:min-w-96 sm:mx-0 p-0 min-w-64 mx-4"
             align="end"
           >
-            <div className="bg-primary-1 px-3 py-2 flex-between text-white gap-1">
+            <div className="bg-[#f07c1e] px-3 py-2 flex-between text-white gap-1">
               <h1 className="text-lg font-semibold ">Notifications</h1>
               <Button variant="ghost" className="text-slate-300 px-2 py-0">
                 Mark all as read
